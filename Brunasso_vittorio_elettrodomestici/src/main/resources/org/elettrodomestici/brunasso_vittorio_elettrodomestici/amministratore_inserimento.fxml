@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.SpinnerValueFactory?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.layout.HBox?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="org.elettrodomestici.brunasso_vittorio_elettrodomestici.CustomerController" spacing="20" alignment="CENTER" style="-fx-background-color: #F5DEB3; -fx-font-family: 'Helvetica'">
+
+    <!-- Title -->
+    <Text text="Inserisci Nuovo Ricambio" style="-fx-font-size: 30px; -fx-fill: #32CD32; -fx-font-weight: bold"/>
+
+    <!-- Ricambio Information -->
+    <VBox spacing="15.0" alignment="CENTER">
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Nome Ricambio" style="-fx-font-size: 18px; -fx-text-fill: #000000"/>
+            <TextField fx:id="partName" promptText="Nome ricambio" style="-fx-font-size: 18px; -fx-background-color: #F9F6F7; -fx-background-radius: 5; -fx-border-radius: 5; -fx-padding: 10"/>
+        </HBox>
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Descrizione" style="-fx-font-size: 18px; -fx-text-fill: #000000"/>
+            <TextField fx:id="partDescription" promptText="Descrizione ricambio" style="-fx-font-size: 18px; -fx-background-color: #F9F6F7; -fx-background-radius: 5; -fx-border-radius: 5; -fx-padding: 10"/>
+        </HBox>
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Quantità" style="-fx-font-size: 18px; -fx-text-fill: #000000"/>
+            <Spinner fx:id="partQuantity" style="-fx-font-size: 18px; -fx-background-color: #F9F6F7; -fx-background-radius: 5;" min="1" max="1000" valueFactory="${new SpinnerValueFactory.IntegerSpinnerValueFactory(1, 1000)}"/>
+        </HBox>
+        <HBox spacing="10" alignment="CENTER">
+            <Label text="Prezzo" style="-fx-font-size: 18px; -fx-text-fill: #000000"/>
+            <TextField fx:id="partPrice" promptText="€" style="-fx-font-size: 18px; -fx-background-color: #F9F6F7; -fx-background-radius: 5; -fx-border-radius: 5; -fx-padding: 10"/>
+        </HBox>
+    </VBox>
+
+    <!-- Buttons -->
+    <Button fx:id="addPartButton" text="Aggiungi Ricambio" onAction="#addPart" style="-fx-font-size: 18px; -fx-background-color: #32CD32; -fx-text-fill: white; -fx-border-radius: 5; -fx-background-radius: 5; -fx-padding: 10"/>
+    <Text fx:id="addPartError" visible="false" fill="red" style="-fx-font-size: 18px"/>
+</VBox>
+
